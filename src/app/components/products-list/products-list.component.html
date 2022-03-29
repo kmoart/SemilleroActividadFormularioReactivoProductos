@@ -1,0 +1,26 @@
+<div class="card p-1">
+    <table class="table">
+        <caption>{{ captionText }}</caption>
+        <thead>
+            <tr>
+                <th scope="col">Product ID</th>
+                <th scope="col">Type of product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of listOfProducts, let i = index; trackBy: trackByItems">
+                <!--En el momento que vaya a haber un cambio en los datos de la tabla -->
+                <td>{{ product.productId }}</td>
+                <td>{{ transformType(product.typeOfProduct) }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ ShowDiscount( product ) }}</td>
+                <td>{{ TotalValue( product )}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
